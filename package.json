@@ -1,0 +1,14 @@
+{
+  "name": "projet-3-oh-my-food",
+  "version": "1.0.0",
+  "description": "Projet-3-Oh-my-food",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Maroine-TERFOUS",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.52.1"
+  }
+}
