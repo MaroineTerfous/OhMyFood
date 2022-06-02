@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+:root {
+  --primary-color: #9356DC;
+}
+
+:root {
+  --secondary-color: #FF79DA;
+}
+
+:root {
+  --tertiary-color: #99E2D0;
+}
+
 *,
 ::before,
 :after {
@@ -15,17 +27,31 @@ body {
 }
 
 h1 {
-  font-family: "Shrikhand", sans-serif;
-  font-size: 50px;
   text-align: center;
+  font-size: 50px;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 500;
+  margin: 20px 0 0 0;
   margin: 30px 0 10px 0;
+}
+@media screen and (max-width: 1024px) {
+  h1 {
+    text-align: left;
+  }
 }
 
 h2 {
   text-align: center;
   font-size: 50px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 800;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 500;
+  margin: 20px 0 0 0;
+  padding: 50px;
+}
+@media screen and (max-width: 1024px) {
+  h2 {
+    text-align: left;
+  }
 }
 
 /* HEADER */
@@ -43,10 +69,10 @@ h2 {
   font-size: 25px;
 }
 .citybar p {
-  font-size: 30px;
   color: #444;
-  font-family: "roboto", sans-serif;
-  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
   padding: 5px 0;
 }
 
@@ -55,18 +81,29 @@ h2 {
   padding: 50px;
 }
 .restauration h2 {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 500;
+  margin: 20px 0 0 0;
   padding: 0 5%;
+}
+@media screen and (max-width: 1024px) {
+  .restauration h2 {
+    text-align: left;
+  }
 }
 .restauration p {
   text-align: center;
-  font-family: "roboto", sans-serif;
-  font-size: 30px;
+  margin: 10px 0 0 0;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
+  font-size: 30px;
 }
 .restauration button {
   display: flex;
   margin: 3rem auto 1rem auto;
-  background-image: linear-gradient(to top, #FF79DA, #9356DC);
+  background-image: linear-gradient(to top, var(--secondary-color), var(--primary-color));
   color: white;
   font-weight: 600;
   font-size: 1.5rem;
@@ -82,6 +119,7 @@ h2 {
   opacity: 0.9;
 }
 
+/* FONCTIONNEMENT */
 .tuto {
   counter-reset: steps;
 }
@@ -89,7 +127,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 3rem;
-  padding: 0 60px;
+  padding: 20px 60px;
 }
 .tuto li {
   position: relative;
@@ -107,7 +145,7 @@ h2 {
   content: counter(steps);
   counter-increment: steps;
   color: white;
-  background-color: #9356DC;
+  background-color: var(--primary-color);
   width: 2rem;
   height: 2rem;
   display: grid;
@@ -125,14 +163,202 @@ h2 {
   color: grey;
   font-size: 1.5rem;
 }
+.tuto li i.fas:hover {
+  color: var(--primary-color);
+}
+.tuto li:hover {
+  background-color: #DFCDF5;
+}
+
+/* RESTAURANTS */
+.menus {
+  background-color: #f7f7f7;
+  padding: 0 0 6rem 0;
+}
+.menus .menus__cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 60px;
+}
+.menus .menus__cards a {
+  text-decoration: none;
+  color: inherit;
+}
+.menus .new {
+  position: relative;
+}
+.menus .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 3rem;
+  width: 10rem;
+  background-color: var(--tertiary-color);
+  color: #116e11;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  font-weight: 600;
+  display: grid;
+  place-items: center;
+  right: 1.5rem;
+  top: 1.5rem;
+  border-radius: 3px;
+}
+.menus .card {
+  width: calc(50% - 120px);
+}
+.menus .card__image {
+  border-radius: 2rem 2rem 0 0;
+  height: 15rem;
+  background-size: cover;
+}
+.menus .card__image-1 {
+  background-image: url(./restaurants/menu-1.jpg);
+}
+.menus .card__image-2 {
+  background-image: url(./restaurants/menu-2.jpg);
+}
+.menus .card__image-3 {
+  background-image: url(./restaurants/menu-3.jpg);
+}
+.menus .card__image-4 {
+  background-image: url(./restaurants/menu-4.jpg);
+}
+.menus .card__description {
+  position: relative;
+  background-color: white;
+  border-radius: 0 0 2rem 2rem;
+  padding: 1rem;
+  box-shadow: 2px 1px 15px -8px #000000;
+}
+.menus .card__description h3,
+.menus .card__description p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  margin: 0.5rem;
+}
+.menus .card__description h3 {
+  font-weight: 800;
+}
+.menus .card__description i {
+  font-size: 40px;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 1rem;
+}
+.menus .card__description .fas {
+  color: transparent;
+  background-image: linear-gradient(to top, var(--secondary-color), var(--primary-color));
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+.menus .card__description:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* FOOTER */
+footer {
+  background-color: #333333;
+  padding: 20px 50px;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+  font-family: "roboto";
+  font-size: 16px;
+  padding: 5px;
+}
+footer h1 {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 500;
+  margin: 20px 0 0 0;
+  padding-bottom: 10px;
+  color: white;
+}
+@media screen and (max-width: 1024px) {
+  footer h1 {
+    text-align: left;
+  }
+}
+footer .footer-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer .footer-flex .icon-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+footer .footer-flex .icon-a i {
+  color: white;
+}
 
 @media screen and (max-width: 1024px) {
+  header h1 {
+    text-align: center;
+  }
+
+  .restauration h2 {
+    text-align: center;
+  }
+
+  .tuto {
+    padding-bottom: 60px;
+  }
   .tuto h2 {
     text-align: left;
     padding: 0 60px;
   }
   .tuto li {
     width: 80%;
+  }
+
+  .menus {
+    padding: 60px;
+  }
+  .menus h2 {
+    margin: 0;
+    padding: 0 0 20px 0;
+  }
+  .menus .menus__cards {
+    flex-direction: column;
+    padding: 0;
+  }
+  .menus .card {
+    width: 100%;
+  }
+
+  footer h1 {
+    text-align: center;
+  }
+  footer .footer-flex {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer h1 {
+    text-align: left;
+    font-size: 30px;
+  }
+  footer .footer-flex {
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
   }
 }
 
