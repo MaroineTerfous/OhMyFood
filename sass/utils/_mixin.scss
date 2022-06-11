@@ -1,0 +1,31 @@
+@mixin primaire {
+    background-color: #9356DC;
+}
+
+@mixin Flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin titre {
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Shrikhand', sans-serif;
+    font-weight: 500;
+    margin: 20px 0 0 0;
+    @media screen and (max-width: 1024px) {
+        text-align: left;
+    }
+    }
+
+@mixin texte {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+
+@mixin box-shadow {
+    box-shadow: 2px 1px 15px -8px #000000;
+}

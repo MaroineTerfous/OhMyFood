@@ -1,0 +1,72 @@
+@use "../utils/mixin" as *;
+@use "../utils/variables" as *;
+@use "../base/typography";
+
+// HEADER
+.citybar {
+  @include Flexbox;
+  gap: 20px;
+  text-align: center;
+  margin: 0;
+  background-color: #ededed;
+  box-shadow: inset 0 5px 10px darkgrey;
+
+  i {
+    font-size: 25px;
+  }
+
+  p {
+    color: #444;
+    @include texte;
+    padding: 5px 0;
+  }
+}
+
+.restauration {
+  background-color: #f7f7f7;
+  padding: 50px;
+
+  h2 {
+    @include titre;
+    padding: 0 5%;
+  }
+
+  p {
+    text-align: center;
+    margin: 10px 0 0 0;
+    @include texte;
+  }
+
+  button {
+    display: flex;
+    margin: 3rem auto 1rem auto;
+    background-image: linear-gradient(to top, $secondary-color, $primary-color);
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    border: none;
+    border-radius: 3rem;
+    @include box-shadow;
+    transition: transform 200ms;
+    cursor: pointer;
+  }
+  :hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .restauration {
+    h2 {
+      text-align: center;
+    }
+  }
+}
