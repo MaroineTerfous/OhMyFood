@@ -58,7 +58,6 @@ a {
     &__item {
       height: 3rem;
       width: 1rem;
-    //   border-radius: 1rem;
       animation: jump 1s;
       animation-iteration-count: 1;
   
@@ -164,7 +163,8 @@ section {
                 background: linear-gradient(0deg, $primary-color 0%, $secondary-color 100%);
             }
             
-            &:hover::before {
+            &:hover::before,
+            &:focus::before {
                 opacity: 1;
             }
         }
@@ -183,7 +183,8 @@ section {
             mix-blend-mode: lighten;
         }
 
-        &__btn:hover {
+        &__btn:hover,
+        &__btn:focus {
             .before-menu__heart {
                 &--noBg {
                     opacity: 0;
@@ -222,13 +223,11 @@ section {
             background-color: white;
             border-radius: 15px;
             margin: 1rem 0;
-            // padding: 1rem;
             @include box-shadow;
             overflow: hidden;
             max-width: 100%;
             animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
             animation-fill-mode: both;
-            animation: keyframesAppear .6s;
             
 
                 &__header {
@@ -262,91 +261,9 @@ section {
                     font-size: 22px;
                     font-family: 'Roboto', sans-serif;
                     padding: 1rem;
+                    position: relative;
+                    right: -80px;
                 }
-                // &__confirmation {
-                //     background-color: $tertiary-color;
-                //     margin: -1rem -6rem -1rem 1.5rem;
-                //     width: 4rem;
-                //     @include Flexbox;
-                //     transition-duration: 0.5s;
-                //   }
-                  
-                //   &:hover &__confirmation {
-                //     margin-right: -1rem;
-                //   }
-                  
-                //   &__wrapIcon {
-                //     height: 1.6rem;
-                //     width: 1.6rem;
-                //     background-color: white;
-                //     @include Flexbox;
-                //     border-radius: 100px;
-                //     transform: rotate(100deg);
-                //     transition-duration: 0.5s;
-                //   }
-                  
-                //   &:hover &__wrapIcon {
-                //     transform: rotate(0);
-                //   }
-                  
-                //   &__icon {
-                //     color: $tertiary-color;
-                //   }
-                
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                
-                // &__check {
-                //     display: grid; 
-                //     place-items: center;
-                //     flex-shrink: 0;
-                //     border-radius: 0 1rem 1rem 0;
-                //     background-color: $tertiary-color;
-                //     margin-right: 0;
-                //     transition: margin-right 0.5s;
-                //     &__icon {
-                //         font-size: 1rem;
-                //         display: display; 
-                //         place-items: center;
-                //         background-color: white;
-                //         height: 1rem;
-                //         width: 1rem; 
-                //         border-radius: 1rem;
-                //         color: $tertiary-color;
-                //     }
-                // }
-                // &:hover {
-                //     cursor: pointer;
-                //     .before-menu__check {
-                //         margin-right: 0;
-                //     }
-                //     i {
-                //         animation: quarterspin 0.5s ease-in-out;
-                //         @keyframes quarterspin {
-                //             0% {
-                //               transform: rotate(-270deg);
-                //             }
-                //             100% {
-                //               transform: rotate(0);
-                //             }
-                //           }
-                //     }
-                // }
 
                 &__check {
                     background-color: $tertiary-color;
@@ -354,6 +271,9 @@ section {
                     border-radius: 0 15px 15px 0;
                     margin: 0px 0 0 20px;
                     width: 80px;
+                    position: relative;
+                    right: -80px;
+                    transition: all 500ms  ease-out;
 
                     &__icon {
                         font-size: 22px;
@@ -361,14 +281,37 @@ section {
                         background-color: white;
                         color: $tertiary-color;
                         border-radius: 50%;
+                        transition: all 500ms ease-out;
+
                     }
                 }
 
-                &:hover .menu__check {
-                    
+                @keyframes confirmation {
+                    0% {
+                        transition: transform 10s;
+                        }
+                    100% {
+                        transition: transform 50s;
+                        }
                 }
 
-                  
+                &:hover .menu__price {
+                    right: 0;
+                    transition: all 500ms ease-out;
+                }
+
+                &:hover .menu__check {
+                    right: 0;
+                }
+
+                &:focus .menu__check {
+                    background-color: darken($tertiary-color, 30%);
+                }
+                &:focus .menu__check__icon {
+                    color: darken($tertiary-color, 30%);
+                    transform: scale(0.90);
+                }
+
                   &__btn {
                       display: flex;
                       margin: 3rem auto 0 auto;
@@ -380,39 +323,21 @@ section {
                       border: none;
                       border-radius: 3rem;
                       @include box-shadow;
-                      transition: transform 200ms;
                       cursor: pointer;
+                  }
+                  &__btn:hover {
+                      transform: scale(1.10);
+                      transition: all ease-out 400ms;
+                      background-image: linear-gradient(to top,$primary-color, $secondary-color);
                   }
             }
                 
                 @for $i from 1 to 9 {
-                    .delay-#{$i} {
-                        animation-delay: #{$i/11}s;
+                    .delay-1 {
+                        // transition: all ease-out 5s;
                     }
                 }
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (max-width: 992px) {
     section {

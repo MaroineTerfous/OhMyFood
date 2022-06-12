@@ -253,7 +253,7 @@ section .before-menu__btn::before {
   width: 100%;
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
 }
-section .before-menu__btn:hover::before {
+section .before-menu__btn:hover::before, section .before-menu__btn:focus::before {
   opacity: 1;
 }
 section .before-menu__heart {
@@ -271,7 +271,7 @@ section .before-menu__heart {
   align-items: center;
   mix-blend-mode: lighten;
 }
-section .before-menu__btn:hover .before-menu__heart--noBg {
+section .before-menu__btn:hover .before-menu__heart--noBg, section .before-menu__btn:focus .before-menu__heart--noBg {
   opacity: 0;
 }
 section .submenus {
@@ -308,7 +308,6 @@ section .menu {
   max-width: 100%;
   animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
   animation-fill-mode: both;
-  animation: keyframesAppear 0.6s;
 }
 section .menu__header {
   white-space: nowrap;
@@ -341,6 +340,8 @@ section .menu__price {
   font-size: 22px;
   font-family: "Roboto", sans-serif;
   padding: 1rem;
+  position: relative;
+  right: -80px;
 }
 section .menu__check {
   background-color: #99E2D0;
@@ -350,6 +351,9 @@ section .menu__check {
   border-radius: 0 15px 15px 0;
   margin: 0px 0 0 20px;
   width: 80px;
+  position: relative;
+  right: -80px;
+  transition: all 500ms ease-out;
 }
 section .menu__check__icon {
   font-size: 22px;
@@ -357,6 +361,29 @@ section .menu__check__icon {
   background-color: white;
   color: #99E2D0;
   border-radius: 50%;
+  transition: all 500ms ease-out;
+}
+@keyframes confirmation {
+  0% {
+    transition: transform 10s;
+  }
+  100% {
+    transition: transform 50s;
+  }
+}
+section .menu:hover .menu__price {
+  right: 0;
+  transition: all 500ms ease-out;
+}
+section .menu:hover .menu__check {
+  right: 0;
+}
+section .menu:focus .menu__check {
+  background-color: #32b091;
+}
+section .menu:focus .menu__check__icon {
+  color: #32b091;
+  transform: scale(0.9);
 }
 section .menu__btn {
   display: flex;
@@ -369,34 +396,13 @@ section .menu__btn {
   border: none;
   border-radius: 3rem;
   box-shadow: 2px 1px 15px -8px #000000;
-  transition: transform 200ms;
   cursor: pointer;
 }
-section .delay-1 {
-  animation-delay: 0.0909090909s;
+section .menu__btn:hover {
+  transform: scale(1.1);
+  transition: all ease-out 400ms;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
 }
-section .delay-2 {
-  animation-delay: 0.1818181818s;
-}
-section .delay-3 {
-  animation-delay: 0.2727272727s;
-}
-section .delay-4 {
-  animation-delay: 0.3636363636s;
-}
-section .delay-5 {
-  animation-delay: 0.4545454545s;
-}
-section .delay-6 {
-  animation-delay: 0.5454545455s;
-}
-section .delay-7 {
-  animation-delay: 0.6363636364s;
-}
-section .delay-8 {
-  animation-delay: 0.7272727273s;
-}
-
 @media screen and (max-width: 992px) {
   section .title {
     display: flex;
