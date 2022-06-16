@@ -1,5 +1,6 @@
 @use '../sass/utils/mixin' as *;
 @use '../sass/utils/variables' as *;
+@use '../sass/utils/keyframes' as *;
 @use '../sass/base/main' as *;
 @use '../sass/layout/footer' as *;
 
@@ -17,27 +18,59 @@ a {
     color: inherit;
 }
 
-@keyframes loader {
-    100% {
-      opacity: 0;
-      z-index: -10;
-    }
-  } 
+%delay {
+    animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+            animation-fill-mode: both;
+            animation: menuAppear--1 3s 3s;
+            transition: transform scale(0);
+}
 
-  @keyframes jump {
-    0% {
-      transform: translateY(0);
-    }
-    25% {
-      transform: translateY(0.5rem);
-    }
-    75% {
-      transform: translateY(-0.5rem);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+%delay {
+    animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+            animation-fill-mode: both;
+            animation: menuAppear--2 3s 4s;
+            transition: transform scale(0);
+}
+
+%delay {
+    animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+            animation: menuAppear--3 3s 5s both;
+            transition: transform scale(0);
+            opacity: 0;
+}
+
+// @keyframes menuAppear--1 {
+//     0% {
+//       transform: scale(0);
+//       opacity: 1;
+//     }
+//     100% {
+//       transform: scale(1);
+//       opacity: 1;
+//     }
+// }
+
+// @keyframes menuAppear--2 {
+//     0% {
+//       transform: scale(0);
+//       opacity: 1
+//     }
+//     100% {
+//       transform: scale(1);
+//       opacity: 1;
+//     }
+// }   
+
+// @keyframes menuAppear--3 {
+//     0% {
+//       transform: scale(0);
+//       opacity: 1;
+//     }
+//     100% {
+//       transform: scale(1);
+//       opacity: 1;
+//     }
+// }
 
 // LOADER SPINNER
 
@@ -56,8 +89,9 @@ a {
     @include Flexbox;
   
     &__item {
-      height: 3rem;
+      height: 1rem;
       width: 1rem;
+      border-radius: 50%;
       animation: jump 1s;
       animation-iteration-count: 1;
   
@@ -81,9 +115,29 @@ a {
         animation-delay: 0.5s;
       }
     }
-  
-    
   }
+
+//   @keyframes loader {
+//     100% {
+//       opacity: 0;
+//       z-index: -10;
+//     }
+//   } 
+
+//   @keyframes jump {
+//     0% {
+//       transform: translateY(0);
+//     }
+//     25% {
+//       transform: translateY(0.5rem);
+//     }
+//     75% {
+//       transform: translateY(-0.5rem);
+//     }
+//     100% {
+//       transform: translateY(0);
+//     }
+//   }
 
 // HEADER
 
@@ -118,7 +172,7 @@ a {
 }
 
 
-// SECTION LA PALETTE DU GOÛT
+// SECTION DES MENUS
 
 section {
     width: 100%;
@@ -226,10 +280,6 @@ section {
             @include box-shadow;
             overflow: hidden;
             max-width: 100%;
-            animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
-            animation-fill-mode: both;
-            
-
                 &__header {
                     white-space: nowrap;
                     text-overflow: ellipsis;
@@ -263,6 +313,7 @@ section {
                     padding: 1rem;
                     position: relative;
                     right: -80px;
+                    transition: all 500ms;
                 }
 
                 &__check {
@@ -273,7 +324,7 @@ section {
                     width: 80px;
                     position: relative;
                     right: -80px;
-                    transition: all 500ms  ease-out;
+                    transition: all 500ms;
 
                     &__icon {
                         font-size: 22px;
@@ -281,23 +332,13 @@ section {
                         background-color: white;
                         color: $tertiary-color;
                         border-radius: 50%;
-                        transition: all 500ms ease-out;
-
+                        transition: all 500ms;
                     }
-                }
-
-                @keyframes confirmation {
-                    0% {
-                        transition: transform 10s;
-                        }
-                    100% {
-                        transition: transform 50s;
-                        }
                 }
 
                 &:hover .menu__price {
                     right: 0;
-                    transition: all 500ms ease-out;
+                    transition: all 500ms;
                 }
 
                 &:hover .menu__check {
@@ -324,23 +365,30 @@ section {
                       border-radius: 3rem;
                       @include box-shadow;
                       cursor: pointer;
+                      transition: all 400ms;
+                      animation-name: btn;
                   }
                   &__btn:hover {
-                      transform: scale(1.10);
-                      transition: all ease-out 400ms;
+                      transform: scale(1.1);
+                      transition: transform all ease-in 10s;
                       background-image: linear-gradient(to top,$primary-color, $secondary-color);
                   }
             }
-                
-                @for $i from 1 to 9 {
-                    .delay-1 {
-                        // transition: all ease-out 5s;
+
+                @for $i from 1 to 4 {
+                    .delay-#{$i} {
+                        animation-delay: #{$i/1}s;
+                        @extend %delay;
                     }
                 }
         }
 
 @media screen and (max-width: 992px) {
     section {
+        .submenus {
+            display: flex;
+            flex-direction: column;
+        }
         .title {
             display: flex;
             justify-content: space-between;
@@ -360,5 +408,3 @@ section {
         }
     }
 }
-
-

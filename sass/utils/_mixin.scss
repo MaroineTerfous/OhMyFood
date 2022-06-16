@@ -2,7 +2,7 @@
     background-color: #9356DC;
 }
 
-@mixin Flexbox {
+@mixin Flexbox($display: flex) {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,3 +29,4 @@
 @mixin box-shadow {
     box-shadow: 2px 1px 15px -8px #000000;
 }
+

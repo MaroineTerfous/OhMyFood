@@ -125,24 +125,55 @@ a {
   color: inherit;
 }
 
-@keyframes loader {
+section .delay-3, section .delay-2, section .delay-1 {
+  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+  animation-fill-mode: both;
+  animation: menuAppear--1 3s 3s;
+  transition: transform scale(0);
+}
+
+section .delay-3, section .delay-2, section .delay-1 {
+  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+  animation-fill-mode: both;
+  animation: menuAppear--2 3s 4s;
+  transition: transform scale(0);
+}
+
+section .delay-3, section .delay-2, section .delay-1 {
+  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
+  animation: menuAppear--3 3s 5s both;
+  transition: transform scale(0);
+  opacity: 0;
+}
+
+@keyframes menuAppear--1 {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
   100% {
-    opacity: 0;
-    z-index: -10;
+    transform: scale(1);
+    opacity: 1;
   }
 }
-@keyframes jump {
+@keyframes menuAppear--2 {
   0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(0.5rem);
-  }
-  75% {
-    transform: translateY(-0.5rem);
+    transform: scale(0);
+    opacity: 1;
   }
   100% {
-    transform: translateY(0);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes menuAppear--3 {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 .loader {
@@ -162,8 +193,9 @@ a {
   align-items: center;
 }
 .loader__item {
-  height: 3rem;
+  height: 1rem;
   width: 1rem;
+  border-radius: 50%;
   animation: jump 1s;
   animation-iteration-count: 1;
 }
@@ -184,6 +216,26 @@ a {
   animation-delay: 0.5s;
 }
 
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0.5rem);
+  }
+  75% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 .header__navbar {
   display: flex;
   justify-content: center;
@@ -306,8 +358,6 @@ section .menu {
   box-shadow: 2px 1px 15px -8px #000000;
   overflow: hidden;
   max-width: 100%;
-  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
-  animation-fill-mode: both;
 }
 section .menu__header {
   white-space: nowrap;
@@ -342,6 +392,7 @@ section .menu__price {
   padding: 1rem;
   position: relative;
   right: -80px;
+  transition: all 500ms;
 }
 section .menu__check {
   background-color: #99E2D0;
@@ -353,7 +404,7 @@ section .menu__check {
   width: 80px;
   position: relative;
   right: -80px;
-  transition: all 500ms ease-out;
+  transition: all 500ms;
 }
 section .menu__check__icon {
   font-size: 22px;
@@ -361,19 +412,11 @@ section .menu__check__icon {
   background-color: white;
   color: #99E2D0;
   border-radius: 50%;
-  transition: all 500ms ease-out;
-}
-@keyframes confirmation {
-  0% {
-    transition: transform 10s;
-  }
-  100% {
-    transition: transform 50s;
-  }
+  transition: all 500ms;
 }
 section .menu:hover .menu__price {
   right: 0;
-  transition: all 500ms ease-out;
+  transition: all 500ms;
 }
 section .menu:hover .menu__check {
   right: 0;
@@ -397,13 +440,29 @@ section .menu__btn {
   border-radius: 3rem;
   box-shadow: 2px 1px 15px -8px #000000;
   cursor: pointer;
+  transition: all 400ms;
+  animation-name: btn;
 }
 section .menu__btn:hover {
   transform: scale(1.1);
-  transition: all ease-out 400ms;
+  transition: transform all ease-in 10s;
   background-image: linear-gradient(to top, #9356DC, #FF79DA);
 }
+section .delay-1 {
+  animation-delay: 1s;
+}
+section .delay-2 {
+  animation-delay: 2s;
+}
+section .delay-3 {
+  animation-delay: 3s;
+}
+
 @media screen and (max-width: 992px) {
+  section .submenus {
+    display: flex;
+    flex-direction: column;
+  }
   section .title {
     display: flex;
     justify-content: space-between;
