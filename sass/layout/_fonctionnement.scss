@@ -1,5 +1,6 @@
 @use '../utils/mixin' as *;
 @use '../utils/variables' as *;
+@use '../components/bouttons' as *;
 @use '../base/typography';
 
 /* FONCTIONNEMENT */
@@ -13,44 +14,13 @@
     }
 
     & li {
-        position: relative;
-        &::before {
-            content: counter(steps);
-            counter-increment: steps;
-            color: white;
-            background-color: $primary-color;
-            width: 2rem;
-            height: 2rem;
-            display: grid;
-            place-items: center;
-            border-radius: 50%;
-            position: absolute;
-            bottom: 1.5rem;
-            left: -1rem;
-        }
-        list-style-type: none;
-        background-color: #f7f7f7;
-        padding: 1.5rem 2rem;
-        flex-grow: 1;
-        border-radius: 2rem;
-        font-size: 26px;
-        font-weight: 700;
-        font-family: 'Roboto', sans-serif;
-        @include box-shadow;
-        &:hover {
-            transform: scale(1.02);
-        }
-        & i.fas {
-            margin-right: 1rem;
-            color: grey;
-            font-size: 1.5rem;
-        }
-        & i.fas:hover {
-            color: $primary-color;
-        }
+        @include btn-fonctionnement;
      }
     li:hover {
-        background-color: #DFCDF5;
+        background-color: lighten($primary-color, 30%);
+        &:hover i {
+            color: $primary-color;
+        }
     }
         }
 

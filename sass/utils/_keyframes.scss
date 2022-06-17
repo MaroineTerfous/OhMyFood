@@ -1,29 +1,35 @@
 // MENU
 @keyframes menuAppear--1 {
-    0% {
-      transform: scale(0)
-    }
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes menuAppear--2 {
-    0% {
-      transform: scale(0)
-    }
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    transform: scale(0);
+    opacity: 1
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }   
 
 @keyframes menuAppear--3 {
-    0% {
-      transform: scale(0)
-    }
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 // LOADER SPINNER

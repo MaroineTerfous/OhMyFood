@@ -16,13 +16,13 @@ footer {
     } 
         h1 {
             @include titre;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             color: white;
         }
 
         .footer-flex {
-            @include Flexbox;
-            flex-direction: column;
+            @include Flexbox($justify-content: space-around);
+            flex-direction: row;
                 .icon-a {
                     @include Flexbox;
                     gap: 5px;

@@ -1,23 +1,29 @@
-@mixin bouton {
+@use '../utils/variables.scss' as *;
+@use '../utils/mixin' as *;
+
+@mixin btn {
+    @include box-shadow;
     display: flex;
     margin: 3rem auto 1rem auto;
     background-image: linear-gradient(to top,$secondary-color, $primary-color);
     color: white;
     font-weight: 600;
     font-size: 1.5rem;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 3rem;
     border: none;
     border-radius: 3rem;
-    @include box-shadow;
     transition: transform 200ms;
+    font-family: 'Roboto', sans-serif;
     cursor: pointer;
+    &:hover {
+        transform: scale(1.02);
+        opacity: 0.9;
+        transition: transform all ease-in 10s;
+        background-image: linear-gradient(to top,$primary-color, $secondary-color);
+    }
 }
-        :hover {
-            transform: scale(1.02);
-            opacity: 0.9;
-        }
 
-@mixin bouton-fonctionnement {
+@mixin btn-fonctionnement {
 position: relative;
         &::before {
             content: counter(steps);
@@ -53,7 +59,4 @@ position: relative;
         & i.fas:hover {
             color: $primary-color;
         }
-     }
-    li:hover {
-        background-color: #DFCDF5;
     }

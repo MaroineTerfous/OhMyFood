@@ -1,8 +1,11 @@
+@use '../sass/base/normalize.scss';
 @use '../sass/utils/mixin' as *;
 @use '../sass/utils/variables' as *;
-@use '../sass/utils/keyframes' as *;
+@use '../sass/utils/keyframes';
+@use '../sass/utils/Animation-delay' as *;
+@use '../sass/components/bouttons' as *;
 @use '../sass/base/main' as *;
-@use '../sass/layout/footer' as *;
+@use '../sass/layout/footer';
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -17,60 +20,6 @@ a {
     text-decoration: none;
     color: inherit;
 }
-
-%delay {
-    animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
-            animation-fill-mode: both;
-            animation: menuAppear--1 3s 3s;
-            transition: transform scale(0);
-}
-
-%delay {
-    animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
-            animation-fill-mode: both;
-            animation: menuAppear--2 3s 4s;
-            transition: transform scale(0);
-}
-
-%delay {
-    animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
-            animation: menuAppear--3 3s 5s both;
-            transition: transform scale(0);
-            opacity: 0;
-}
-
-// @keyframes menuAppear--1 {
-//     0% {
-//       transform: scale(0);
-//       opacity: 1;
-//     }
-//     100% {
-//       transform: scale(1);
-//       opacity: 1;
-//     }
-// }
-
-// @keyframes menuAppear--2 {
-//     0% {
-//       transform: scale(0);
-//       opacity: 1
-//     }
-//     100% {
-//       transform: scale(1);
-//       opacity: 1;
-//     }
-// }   
-
-// @keyframes menuAppear--3 {
-//     0% {
-//       transform: scale(0);
-//       opacity: 1;
-//     }
-//     100% {
-//       transform: scale(1);
-//       opacity: 1;
-//     }
-// }
 
 // LOADER SPINNER
 
@@ -116,28 +65,6 @@ a {
       }
     }
   }
-
-//   @keyframes loader {
-//     100% {
-//       opacity: 0;
-//       z-index: -10;
-//     }
-//   } 
-
-//   @keyframes jump {
-//     0% {
-//       transform: translateY(0);
-//     }
-//     25% {
-//       transform: translateY(0.5rem);
-//     }
-//     75% {
-//       transform: translateY(-0.5rem);
-//     }
-//     100% {
-//       transform: translateY(0);
-//     }
-//   }
 
 // HEADER
 
@@ -354,24 +281,13 @@ section {
                 }
 
                   &__btn {
-                      display: flex;
-                      margin: 3rem auto 0 auto;
-                      background-image: linear-gradient(to top,$secondary-color, $primary-color);
-                      color: white;
-                      font-weight: 600;
-                      font-size: 1.5rem;
-                      padding: 1rem 3rem;
-                      border: none;
-                      border-radius: 3rem;
-                      @include box-shadow;
-                      cursor: pointer;
-                      transition: all 400ms;
-                      animation-name: btn;
+                    @include btn;
+                    transition: all 400ms;
                   }
                   &__btn:hover {
-                      transform: scale(1.1);
+                      transform: scale(1.02);
                       transition: transform all ease-in 10s;
-                      background-image: linear-gradient(to top,$primary-color, $secondary-color);
+                      background-image: linear-gradient(to top, $primary-color, $secondary-color);
                   }
             }
 

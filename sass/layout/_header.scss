@@ -1,5 +1,6 @@
 @use "../utils/mixin" as *;
 @use "../utils/variables" as *;
+@use "../components/bouttons" as *;
 @use "../base/typography";
 
 // HEADER
@@ -32,28 +33,13 @@
   }
 
   p {
+    @include texte;
     text-align: center;
     margin: 10px 0 0 0;
-    @include texte;
   }
 
   button {
-    display: flex;
-    margin: 3rem auto 1rem auto;
-    background-image: linear-gradient(to top, $secondary-color, $primary-color);
-    color: white;
-    font-weight: 600;
-    font-size: 1.5rem;
-    padding: 1.5rem 2rem;
-    border: none;
-    border-radius: 3rem;
-    @include box-shadow;
-    transition: transform 200ms;
-    cursor: pointer;
-  }
-  :hover {
-    transform: scale(1.02);
-    opacity: 0.9;
+    @include btn;
   }
 }
 
