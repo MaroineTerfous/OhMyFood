@@ -23,36 +23,36 @@
     <header>
         <h1>Ohmyfood</h1>
         <div class="citybar">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>Paris, Belleville</p>
+            <i class="fas fa-map-marker-alt citybar__icon"></i>
+            <p class="citybar__city">Paris, Belleville</p>
         </div>
         <div class="restauration">
-            <h2>Réservez le menu qui vous convient</h2>
-            <p>Découvrez des restaurants d'exception, séléctionnés par nos soins</p>
-            <button>Explorer nos restaurants</button>
+            <h2 class="restauration__title">Réservez le menu qui vous convient</h2>
+            <p class="restauration__subtitle">Découvrez des restaurants d'exception, séléctionnés par nos soins</p>
+            <button class="restauration__btn">Explorer nos restaurants</button>
         </div>
     </header>
     <main>
 
 <!-- FONCTIONNEMENT -->
-<section class="tuto">
-    <h2>Fonctionnement</h2>
-    <ol>
-        <li><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</il>
-        <li><i class="fas fa-list-ul"></i>Composez votre menu</li>
-        <li><i class="fas fa-store"></i>Dégustez au restaurant</il>
+<section class="fonctionnement">
+    <h2 class="fonctionnement__title">Fonctionnement</h2>
+    <ol class="fonctionnement__section">
+        <li class="fonctionnement__bloc"><i class="fas fa-mobile-alt"></i>Choisissez un restaurant</il>
+        <li class="fonctionnement__bloc"><i class="fas fa-list-ul"></i>Composez votre menu</li>
+        <li class="fonctionnement__bloc"><i class="fas fa-store"></i>Dégustez au restaurant</il>
     </ol>
 </section>
 
 <!-- RESTAURANTS -->
 <section class="menus">
-    <h2>Restaurants</h2>
+    <h2 class="menus__title">Restaurants</h2>
     <div class="menus__cards">
         <a href="./pages/resto-1.html" class="card new">
             <div class="card__image card__image-1"></div>
             <div class="card__description">
-                <h3>La palette du goût</h3>
-                <p>Ménilmontant</p>
+                <h3 class="card__description--title">La palette du goût</h3>
+                <p class="card__description--text">Ménilmontant</p>
                 <i class="far fa-heart"></i>
                 <i class="fas fa-heart"></i>
             </div>
@@ -60,8 +60,8 @@
         <a href="./pages/la-note-enchantee.html" class="card new">
             <div class="card__image card__image-2"></div>
             <div class="card__description">
-                <h3>La note enchantée</h3>
-                <p>Charonne</p>
+                <h3 class="card__description--title">La note enchantée</h3>
+                <p class="card__description--text">Charonne</p>
                 <i class="far fa-heart"></i>
                 <i class="fas fa-heart"></i>
             </div>
@@ -69,8 +69,8 @@
         <a href="./pages/a-la-française.html" class="card">
             <div class="card__image card__image-3"></div>
             <div class="card__description">
-                <h3>A la française</h3>
-                <p>Cité Rouge</p>
+                <h3 class="card__description--title">A la française</h3>
+                <p class="card__description--text">Cité Rouge</p>
                 <i class="far fa-heart"></i>
                 <i class="fas fa-heart"></i>
             </div>
@@ -78,8 +78,8 @@
         <a href="./pages/le-delice-des-sens.html" class="card">
             <div class="card__image card__image-4"></div>
             <div class="card__description">
-                <h3>Le délice des sens</h3>
-                <p>Folie-méricourt</p>
+                <h3 class="card__description--title">Le délice des sens</h3>
+                <p class="card__description--text">Folie-méricourt</p>
                 <i class="far fa-heart"></i>
                 <i class="fas fa-heart"></i>
             </div>
@@ -88,19 +88,19 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-    <h1>Ohmyfood</h1>
-    <div class="footer-flex">
-        <div class="icon-a">
+<footer class="footer">
+    <h1 class="footer__title">Ohmyfood</h1>
+    <div class="footer__flex">
+        <div class="footer__flex--bloc">
             <i class="fa-solid fa-utensils"></i>
             <a href="#">Proposer un restaurants</a>
         </div>
-        <div class="icon-a">
-            <i class="fa-solid fa-handshake-angle"></i>
+        <div class="footer__flex--bloc">
+            <i class="fa-solid fa-handshake-angle" class="footer__bloc--icon"></i>
             <a href="#">Devenir partenaire</a>
         </div>
-        <a href="#">Mentions Légales</a>
-        <a href="mailto:maroine.terfous@gmail.com">Contact</a>
+            <a href="#" class="footer__link">Mentions Légales</a>
+            <a href="mailto:maroine.terfous@gmail.com">Contact</a>
     </div>
 </footer> 
 </body>

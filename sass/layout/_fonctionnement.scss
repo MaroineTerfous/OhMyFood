@@ -4,36 +4,34 @@
 @use '../base/typography';
 
 /* FONCTIONNEMENT */
-.tuto {
+.fonctionnement {
     counter-reset: steps;
-    & ol {
+    @include tablette {
+        padding-bottom: 60px;
+    }
+    &__title {
+        @include tablette {
+            text-align: left;
+            padding: 0 60px;
+        }
+    }
+    &__section {
         display: flex;
         flex-wrap: wrap;
         gap: 3rem;
         padding: 20px 60px;
     }
 
-    & li {
+    &__bloc {
         @include btn-fonctionnement;
-     }
-    li:hover {
-        background-color: lighten($primary-color, 30%);
-        &:hover i {
-            color: $primary-color;
+        @include tablette {
+            width: 80%;
+        }
+        &:hover {
+            background-color: lighten($primary-color, 30%);
+            &:hover i {
+                color: $primary-color;
+            }
         }
     }
-        }
-
-@media screen and (max-width: 1024px) 
-{
-    .tuto {
-        padding-bottom: 60px;
-            & h2 {
-                text-align: left;
-                padding: 0 60px; 
-            }
-            & li {
-                width: 80%;
-            } 
-        }
 }

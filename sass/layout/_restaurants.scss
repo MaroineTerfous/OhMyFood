@@ -6,78 +6,82 @@
 .menus {
     background-color: #f7f7f7;
     padding: 0 0 6rem 0;
-
-    .menus__cards {
+    @include tablette {
+        padding: 60px;
+    }
+    &__title {
+        @include tablette {
+        margin: 0;
+        padding: 0 0 20px 0;
+        }
+    }
+    &__cards {
         @include Flexbox;
         flex-wrap: wrap;
         gap: 2rem;
         padding: 0 60px;
-            a {
-                text-decoration: none;
-                color: inherit;
+        @include tablette {
+            flex-direction: column;
+            padding: 0;
+        }
+    }
+        .new {
+            position: relative;
+            &::before {
+            content: "Nouveau";
+            position: absolute;
+            height: 3rem;
+            width: 10rem;
+            background-color: $tertiary-color;
+            color: darken(lightgreen, 50%);
+            @include texte;
+            font-weight: 600;
+            display: grid;
+            place-items: center;
+            right: 1.5rem;
+            top: 1.5rem;
+            border-radius: 3px;
             }
-    }
-
-    .new {
-        position: relative;
-    }
-
-    .new::before {
-        content: "Nouveau";
-        position: absolute;
-        height: 3rem;
-        width: 10rem;
-        background-color: $tertiary-color;
-        color: darken(lightgreen, 50%);
-        @include texte;
-        font-weight: 600;
-        display: grid;
-        place-items: center;
-        right: 1.5rem;
-        top: 1.5rem;
-        border-radius: 3px;
-    }
-
+        }
+    
     .card {
         width: calc(50% - 120px);
+        text-decoration: none;
+        color: inherit;
+        @include tablette {
+            width: 100%;
+        }
         &__image {
             border-radius: 2rem 2rem 0 0;
             height: 15rem;
             background-size: cover;
         }
-
         &__image-1 { 
-            background-image: url(./restaurants/menu-1.jpg)
+            background-image: url(./img/menu-1.jpg)
         }
-
         &__image-2 { 
-            background-image: url(./restaurants/menu-2.jpg)
+            background-image: url(./img/menu-2.jpg)
         }
-
         &__image-3 { 
-            background-image: url(./restaurants/menu-3.jpg)
+            background-image: url(./img/menu-3.jpg)
         }
-
         &__image-4 { 
-            background-image: url(./restaurants/menu-4.jpg)
+            background-image: url(./img/menu-4.jpg)
         }
-
         &__description {
             position: relative;
             background-color: white;
             border-radius: 0 0 2rem 2rem;
             padding: 1rem;
             @include box-shadow;
-            h3, 
-            p {
+            &--title, 
+            &--text {
                 @include texte;
                 margin: 0.5rem;
             }
-
-            h3 {
+            &--title {
                 font-weight: 800;
             }
-
             i {
                 font-size: 40px;
                 position: absolute;
@@ -99,23 +103,5 @@
                 transform: translateY(-50%) scale(1.2)
             }
         }
-    }
-}
-
-@media screen and (max-width: 1024px) 
-{
-    .menus {
-        padding: 60px;
-            h2 {
-                margin: 0;
-                padding: 0 0 20px 0;
-            }
-            .menus__cards {
-                flex-direction: column;
-                padding: 0;
-                }
-                .card {
-                    width: 100%;
-                    }
     }
 }

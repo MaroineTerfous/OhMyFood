@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 @mixin primaire {
     background-color: #9356DC;
 }
@@ -73,3 +75,15 @@
       }
     }
   }
+
+@mixin mobile {
+  @media screen and (max-width: map-get($breakpoints, mobile)) {
+    @content;
+  }
+}
+
+@mixin tablette {
+  @media screen and (max-width: map-get($breakpoints, tablette)) {
+    @content;
+  }
+}

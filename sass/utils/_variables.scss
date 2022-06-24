@@ -10,3 +10,8 @@ $tertiary-color: #99E2D0;
       transform: scale(1);
     }
   }
+
+  $breakpoints: (
+    mobile: 768px,
+    tablette: 1024px
+);
