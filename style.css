@@ -401,6 +401,13 @@ h1 {
 }
 @media screen and (max-width: 1024px) {
   h1 {
+    font-size: 40px;
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 26px;
     text-align: left;
   }
 }
@@ -415,6 +422,13 @@ h2 {
 }
 @media screen and (max-width: 1024px) {
   h2 {
+    font-size: 40px;
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  h2 {
+    font-size: 26px;
     text-align: left;
   }
 }
@@ -422,6 +436,12 @@ h2 {
 @media screen and (max-width: 1024px) {
   h1 {
     text-align: center;
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 425px) {
+  h1 {
+    font-size: 35px;
   }
 }
 
@@ -438,6 +458,11 @@ h2 {
 .citybar__icon {
   font-size: 25px;
 }
+@media screen and (max-width: 425px) {
+  .citybar__icon {
+    font-size: 20px;
+  }
+}
 .citybar__city {
   color: #444;
   font-family: "Roboto", sans-serif;
@@ -445,10 +470,27 @@ h2 {
   font-size: 30px;
   padding: 5px 0;
 }
+@media screen and (max-width: 1024px) {
+  .citybar__city {
+    padding: 0;
+    margin: 20px 0;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .citybar__city {
+    font-size: 20px;
+  }
+}
 
 .restauration {
   background-color: #f7f7f7;
   padding: 50px;
+}
+@media screen and (max-width: 500px) {
+  .restauration {
+    padding: 20px;
+  }
 }
 .restauration__title {
   text-align: center;
@@ -460,12 +502,25 @@ h2 {
 }
 @media screen and (max-width: 1024px) {
   .restauration__title {
+    font-size: 40px;
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  .restauration__title {
+    font-size: 26px;
     text-align: left;
   }
 }
 @media screen and (max-width: 1024px) {
   .restauration__title {
     text-align: center;
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .restauration__title {
+    font-size: 30px;
   }
 }
 .restauration__subtitle {
@@ -474,6 +529,16 @@ h2 {
   font-size: 30px;
   text-align: center;
   margin: 10px 0 0 0;
+}
+@media screen and (max-width: 1024px) {
+  .restauration__subtitle {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .restauration__subtitle {
+    font-size: 22px;
+  }
 }
 .restauration__btn {
   box-shadow: 2px 1px 15px -8px #000000;
@@ -496,6 +561,12 @@ h2 {
   transition: transform all ease-in 10s;
   background-image: linear-gradient(to top, #9356DC, #FF79DA);
 }
+@media screen and (max-width: 500px) {
+  .restauration__btn {
+    padding: 20px;
+    font-size: 1rem;
+  }
+}
 
 /* FONCTIONNEMENT */
 .fonctionnement {
@@ -506,10 +577,39 @@ h2 {
     padding-bottom: 60px;
   }
 }
+@media screen and (max-width: 425px) {
+  .fonctionnement {
+    padding-bottom: 20px;
+  }
+}
+.fonctionnement__title {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 500;
+  margin: 20px 0 0 0;
+}
 @media screen and (max-width: 1024px) {
   .fonctionnement__title {
+    font-size: 40px;
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  .fonctionnement__title {
+    font-size: 26px;
     text-align: left;
-    padding: 0 60px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .fonctionnement__title {
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .fonctionnement__title {
+    text-align: left;
+    padding-left: 20px;
   }
 }
 .fonctionnement__section {
@@ -517,6 +617,16 @@ h2 {
   flex-wrap: wrap;
   gap: 3rem;
   padding: 20px 60px;
+}
+@media screen and (max-width: 768px) {
+  .fonctionnement__section {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .fonctionnement__section {
+    padding: 0 20px;
+  }
 }
 .fonctionnement__bloc {
   position: relative;
@@ -544,27 +654,69 @@ h2 {
   bottom: 1.5rem;
   left: -1rem;
 }
-.fonctionnement__bloc:hover {
-  transform: scale(1.02);
+@media screen and (max-width: 500px) {
+  .fonctionnement__bloc::before {
+    font-size: 18px;
+    top: 0.7rem;
+  }
 }
-.fonctionnement__bloc i.fas {
-  margin-right: 1rem;
-  color: grey;
-  font-size: 1.5rem;
-}
-.fonctionnement__bloc i.fas:hover {
-  color: #9356DC;
+@media screen and (max-width: 425px) {
+  .fonctionnement__bloc::before {
+    font-size: 14px;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }
 @media screen and (max-width: 1024px) {
   .fonctionnement__bloc {
     width: 80%;
   }
 }
+@media screen and (max-width: 500px) {
+  .fonctionnement__bloc {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .fonctionnement__bloc {
+    font-size: 16px;
+    padding: 20px 34px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .fonctionnement__bloc {
+    font-size: 14px;
+  }
+}
 .fonctionnement__bloc:hover {
+  transform: scale(1.02);
   background-color: #e4d5f6;
 }
 .fonctionnement__bloc:hover:hover i {
   color: #9356DC;
+}
+.fonctionnement__bloc i.fas {
+  margin-right: 1rem;
+  color: grey;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 500px) {
+  .fonctionnement__bloc i.fas {
+    font-size: 22px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .fonctionnement__bloc i.fas {
+    font-size: 18px;
+  }
+}
+.fonctionnement__bloc i.fas:hover {
+  color: #9356DC;
+}
+@media screen and (max-width: 500px) {
+  .fonctionnement__bloc {
+    padding: 15px 34px;
+  }
 }
 
 /* RESTAURANTS */
@@ -574,13 +726,19 @@ h2 {
 }
 @media screen and (max-width: 1024px) {
   .menus {
-    padding: 60px;
+    padding: 60px 20px;
   }
 }
 @media screen and (max-width: 1024px) {
   .menus__title {
     margin: 0;
     padding: 0 0 20px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menus__title {
+    text-align: left;
+    padding-left: 20px;
   }
 }
 .menus__cards {
@@ -616,6 +774,13 @@ h2 {
   right: 1.5rem;
   top: 1.5rem;
   border-radius: 3px;
+}
+@media screen and (max-width: 768px) {
+  .menus .new::before {
+    font-size: 20px;
+    height: 2.5rem;
+    width: 8rem;
+  }
 }
 .menus .card {
   width: calc(50% - 120px);
@@ -657,6 +822,11 @@ h2 {
   font-size: 30px;
   margin: 0.5rem;
 }
+@media screen and (max-width: 425px) {
+  .menus .card__description--title, .menus .card__description--text {
+    font-size: 20px;
+  }
+}
 .menus .card__description--title {
   font-weight: 800;
 }
@@ -667,6 +837,11 @@ h2 {
   top: 50%;
   transform: translateY(-50%);
   padding-right: 1rem;
+}
+@media screen and (max-width: 425px) {
+  .menus .card__description i {
+    font-size: 35px;
+  }
 }
 .menus .card__description .fas {
   color: transparent;
@@ -710,6 +885,13 @@ h2 {
 }
 @media screen and (max-width: 1024px) {
   .footer__title {
+    font-size: 40px;
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  .footer__title {
+    font-size: 26px;
     text-align: left;
   }
 }

@@ -12,6 +12,9 @@ $tertiary-color: #99E2D0;
   }
 
   $breakpoints: (
+    tablette: 1024px,
     mobile: 768px,
-    tablette: 1024px
+    mobile-XL: 500px,
+    mobile-L: 425px,
+    mobile-M: 375px,
 );

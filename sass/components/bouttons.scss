@@ -9,7 +9,7 @@
     color: white;
     font-weight: 600;
     font-size: 1.5rem;
-    padding: 1.5rem 3rem;
+    padding: 15px 40px;
     border: none;
     border-radius: 3rem;
     transition: transform 200ms;
@@ -21,6 +21,9 @@
         transition: transform all ease-in 10s;
         background-image: linear-gradient(to top,$primary-color, $secondary-color);
     }
+    @include mobile-XL {
+        font-size: 18px;
+      }
 }
 
 @mixin btn-fonctionnement {
@@ -38,6 +41,15 @@ position: relative;
             position: absolute;
             bottom: 1.5rem;
             left: -1rem;
+            @include mobile-XL {
+                font-size: 18px;
+                top: 0.7rem;
+            }
+            @include mobile-L {
+                font-size: 14px;
+                width: 1.8rem;
+                height: 1.8rem;
+            }
         }
         list-style-type: none;
         background-color: #f7f7f7;
@@ -48,15 +60,86 @@ position: relative;
         font-weight: 700;
         font-family: 'Roboto', sans-serif;
         @include box-shadow;
+        @include tablette {
+            width: 80%;
+        }
+        @include mobile-XL {
+            font-size: 22px;
+        }
+        @include mobile-L {
+            font-size: 16px;
+            padding: 20px 34px;
+        }
+        @include mobile-M {
+            font-size: 14px;
+        }
         &:hover {
             transform: scale(1.02);
+            background-color: lighten($primary-color, 30%);
+            &:hover i {
+                color: $primary-color;
+            }
         }
         & i.fas {
             margin-right: 1rem;
             color: grey;
             font-size: 1.5rem;
+            @include mobile-XL {
+                font-size: 22px;
+            }
+            @include mobile-L {
+                font-size: 18px;
+            }
         }
         & i.fas:hover {
             color: $primary-color;
         }
+    }
+    footer {
+        /* FOOTER */
+.footer {
+    background-color: #333333;
+    padding: 20px 50px;
+    &__link {   
+        text-decoration: none;
+        color: white;
+        font-family: 'roboto';
+        font-size: 16px;
+        padding: 5px;
+        @include mobile {
+            text-align: left;
+            font-size: 30px;
+        }
+    } 
+    &__title {
+        @include titre;
+        padding-bottom: 15px;
+        color: white;
+    }
+    &__flex {
+        @include Flexbox($justify-content: space-around);
+        flex-direction: row;
+        @include mobile {
+            flex-direction: column;
+            gap: 5px;
+            align-items: start;
+        }
+        @include tablette {
+            text-align: center;
+        }
+            &--bloc {
+                @include Flexbox;
+                gap: 5px;
+                    i {
+                        color: white;
+                    }
+            }      
+        a { 
+            color: white;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+        }
+    }
+}
     }

@@ -1,10 +1,10 @@
-@use '..sass/utils/mixin' as *;
-@use '../sass/utils/variables' as *;
-@use '../sass/utils/keyframes';
-@use '../sass/utils/Animation-delay' as *;
-@use '../sass/components/bouttons' as *;
-@use '../sass/base/main' as *;
-@use '../sass/layout/footer';
+@use './sass/utils/mixin' as *;
+@use './sass/utils/variables' as *;
+@use './sass/utils/keyframes';
+@use './sass/utils/Animation-delay' as *;
+@use './sass/components/bouttons' as *;
+@use './sass/base/main' as *;
+@use './sass/layout/footer' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
@@ -103,6 +103,11 @@ section {
             align-items: center;
             justify-content: space-between;
         }
+        &__title {
+            @include mobile {
+                font-size: 30px;
+            }
+        }
         &__btn {
             height: 60px;
             width: 60px;
@@ -157,6 +162,9 @@ section {
         display: grid;
         grid-template-columns: repeat(3,1fr);
         column-gap: 20px;
+        @include tablette {
+            grid-template-columns: repeat(1, 1fr);
+        }
             &__grid {
                 max-width: 100%;
                 overflow: hidden;
@@ -165,6 +173,9 @@ section {
             &__title {
                 text-transform: uppercase;
                 position: relative;
+                @include mobile {
+                    font-size: 18px;
+                }
             }
             &__title::after {
             content: "";
@@ -199,6 +210,9 @@ section {
                     margin: 0;
                     font-weight: 600;
                     font-size: 22px;
+                    @include mobile {
+                        font-size: 18px;
+                    }
                 }
                 &__description {
                     white-space: nowrap;
@@ -206,6 +220,9 @@ section {
                     overflow: hidden;
                     margin: 0;
                     font-size: 18px;
+                    @include mobile {
+                        font-size: 18px;
+                    }
                 }
                 &__price {
                     display: flex;
@@ -219,6 +236,9 @@ section {
                     position: relative;
                     right: -80px;
                     transition: all 500ms;
+                    @include mobile {
+                        font-size: 18px;
+                    }
                 }
 
                 &__check {
@@ -264,13 +284,6 @@ section {
                       background-image: linear-gradient(to top, $primary-color, $secondary-color);
                   }
             }
-
-                @for $i from 1 to 4 {
-                    .delay-#{$i} {
-                        animation-delay: #{$i/1}s;
-                        @extend %delay;
-                    }
-                }
 
                 @for $i from 1 to 4 {
                     .delay-#{$i} {
