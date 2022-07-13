@@ -405,10 +405,9 @@ h1 {
     padding: 10px 0;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   h1 {
     font-size: 26px;
-    text-align: left;
   }
 }
 
@@ -426,11 +425,84 @@ h2 {
     padding: 10px 0;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   h2 {
     font-size: 26px;
-    text-align: left;
   }
+}
+
+footer {
+  /* FOOTER */
+}
+footer .footer {
+  background-color: #333333;
+  padding: 20px 50px;
+}
+footer .footer__link {
+  text-decoration: none;
+  color: white;
+  font-family: "roboto";
+  font-size: 16px;
+  padding: 5px;
+}
+@media screen and (max-width: 768px) {
+  footer .footer__link {
+    text-align: left;
+    font-size: 30px;
+  }
+}
+footer .footer__title {
+  text-align: center;
+  font-size: 50px;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 500;
+  margin: 20px 0 0 0;
+  padding-bottom: 15px;
+  color: white;
+}
+@media screen and (max-width: 1024px) {
+  footer .footer__title {
+    font-size: 40px;
+    padding: 10px 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  footer .footer__title {
+    font-size: 26px;
+  }
+}
+footer .footer__flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+@media screen and (max-width: 768px) {
+  footer .footer__flex {
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
+  }
+}
+@media screen and (max-width: 1024px) {
+  footer .footer__flex {
+    text-align: center;
+  }
+}
+footer .footer__flex--bloc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+footer .footer__flex--bloc i {
+  color: white;
+}
+footer .footer__flex a {
+  color: white;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -506,10 +578,9 @@ h2 {
     padding: 10px 0;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .restauration__title {
     font-size: 26px;
-    text-align: left;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -548,7 +619,7 @@ h2 {
   color: white;
   font-weight: 600;
   font-size: 1.5rem;
-  padding: 1.5rem 3rem;
+  padding: 15px 40px;
   border: none;
   border-radius: 3rem;
   transition: transform 200ms;
@@ -563,8 +634,7 @@ h2 {
 }
 @media screen and (max-width: 500px) {
   .restauration__btn {
-    padding: 20px;
-    font-size: 1rem;
+    font-size: 18px;
   }
 }
 
@@ -595,10 +665,9 @@ h2 {
     padding: 10px 0;
   }
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .fonctionnement__title {
     font-size: 26px;
-    text-align: left;
   }
 }
 @media screen and (max-width: 425px) {
@@ -857,24 +926,16 @@ h2 {
 }
 
 /* FOOTER */
-.footer {
+.foot {
   background-color: #333333;
   padding: 20px 50px;
 }
-.footer__link {
-  text-decoration: none;
-  color: white;
-  font-family: "roboto";
-  font-size: 16px;
-  padding: 5px;
-}
 @media screen and (max-width: 768px) {
-  .footer__link {
-    text-align: left;
-    font-size: 30px;
+  .foot {
+    padding: 20px;
   }
 }
-.footer__title {
+.foot__logo {
   text-align: center;
   font-size: 50px;
   font-family: "Shrikhand", sans-serif;
@@ -884,45 +945,49 @@ h2 {
   color: white;
 }
 @media screen and (max-width: 1024px) {
-  .footer__title {
+  .foot__logo {
     font-size: 40px;
     padding: 10px 0;
   }
 }
-@media screen and (max-width: 425px) {
-  .footer__title {
+@media screen and (max-width: 768px) {
+  .foot__logo {
     font-size: 26px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .foot__logo {
     text-align: left;
   }
 }
-.footer__flex {
+.foot__flex {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
 }
 @media screen and (max-width: 768px) {
-  .footer__flex {
+  .foot__flex {
     flex-direction: column;
     gap: 5px;
     align-items: start;
   }
 }
 @media screen and (max-width: 1024px) {
-  .footer__flex {
+  .foot__flex {
     text-align: center;
   }
 }
-.footer__flex--bloc {
+.foot__flex--bloc {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
 }
-.footer__flex--bloc i {
+.foot__flex--bloc i {
   color: white;
 }
-.footer__flex a {
+.foot__flex a {
   color: white;
   text-decoration: none;
   font-family: "Roboto", sans-serif;

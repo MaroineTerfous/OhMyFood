@@ -240,7 +240,6 @@ section {
                         font-size: 18px;
                     }
                 }
-
                 &__check {
                     background-color: $tertiary-color;
                     @include Flexbox;
@@ -250,14 +249,14 @@ section {
                     position: relative;
                     right: -80px;
                     transition: all 500ms;
-
-                    &__icon {
+                    &--icon {
                         font-size: 22px;
                         padding: 5px;
                         background-color: white;
                         color: $tertiary-color;
                         border-radius: 50%;
                         transition: all 500ms;
+                        transform: rotate(0deg);
                     }
                 }
                 &:hover .menu__price {
@@ -267,10 +266,13 @@ section {
                 &:hover .menu__check {
                     right: 0;
                 }
+                &:hover .menu__check--icon {
+                    transform: rotate(360deg)
+                }
                 &:focus .menu__check {
                     background-color: darken($tertiary-color, 30%);
                 }
-                &:focus .menu__check__icon {
+                &:focus .menu__check--icon {
                     color: darken($tertiary-color, 30%);
                     transform: scale(0.90);
                 }

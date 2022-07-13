@@ -149,7 +149,6 @@ footer .footer__title {
 @media screen and (max-width: 768px) {
   footer .footer__title {
     font-size: 26px;
-    text-align: left;
   }
 }
 footer .footer__flex {
@@ -217,7 +216,6 @@ h1 {
 @media screen and (max-width: 768px) {
   h1 {
     font-size: 26px;
-    text-align: left;
   }
 }
 
@@ -238,21 +236,20 @@ h2 {
 @media screen and (max-width: 768px) {
   h2 {
     font-size: 26px;
-    text-align: left;
   }
 }
 
 /* FOOTER */
-.footer {
+.foot {
   background-color: #333333;
   padding: 20px 50px;
 }
 @media screen and (max-width: 768px) {
-  .footer {
+  .foot {
     padding: 20px;
   }
 }
-.footer__logo {
+.foot__logo {
   text-align: center;
   font-size: 50px;
   font-family: "Shrikhand", sans-serif;
@@ -262,45 +259,49 @@ h2 {
   color: white;
 }
 @media screen and (max-width: 1024px) {
-  .footer__logo {
+  .foot__logo {
     font-size: 40px;
     padding: 10px 0;
   }
 }
 @media screen and (max-width: 768px) {
-  .footer__logo {
+  .foot__logo {
     font-size: 26px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .foot__logo {
     text-align: left;
   }
 }
-.footer__flex {
+.foot__flex {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
 }
 @media screen and (max-width: 768px) {
-  .footer__flex {
+  .foot__flex {
     flex-direction: column;
     gap: 5px;
     align-items: start;
   }
 }
 @media screen and (max-width: 1024px) {
-  .footer__flex {
+  .foot__flex {
     text-align: center;
   }
 }
-.footer__flex--bloc {
+.foot__flex--bloc {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
 }
-.footer__flex--bloc i {
+.foot__flex--bloc i {
   color: white;
 }
-.footer__flex a {
+.foot__flex a {
   color: white;
   text-decoration: none;
   font-family: "Roboto", sans-serif;
@@ -558,13 +559,14 @@ section .menu__check {
   right: -80px;
   transition: all 500ms;
 }
-section .menu__check__icon {
+section .menu__check--icon {
   font-size: 22px;
   padding: 5px;
   background-color: white;
   color: #99E2D0;
   border-radius: 50%;
   transition: all 500ms;
+  transform: rotate(0deg);
 }
 section .menu:hover .menu__price {
   right: 0;
@@ -573,10 +575,13 @@ section .menu:hover .menu__price {
 section .menu:hover .menu__check {
   right: 0;
 }
+section .menu:hover .menu__check--icon {
+  transform: rotate(360deg);
+}
 section .menu:focus .menu__check {
   background-color: #32b091;
 }
-section .menu:focus .menu__check__icon {
+section .menu:focus .menu__check--icon {
   color: #32b091;
   transform: scale(0.9);
 }

@@ -3,7 +3,7 @@
 @use '../base/typography';
 
 /* FOOTER */
-.footer {
+.foot {
     background-color: #333333;
     padding: 20px 50px;
     @include mobile {
@@ -13,6 +13,9 @@
         @include titre;
         padding-bottom: 15px;
         color: white;
+        @include mobile {
+            text-align: left;
+        }
     }
     &__flex {
         @include Flexbox($justify-content: space-around);
